@@ -1,0 +1,28 @@
+% -*-latex-*-
+% calculus.tex
+%
+% dkelley -   7 Feb 2022
+%
+%
+
+\begin{section}{Formulas}
+\begin{tabular}{l l}
+  Quadratic Approximation & $f(u+x) ~= f(u) + f'(u) \cdot x + f''(u) \cdot x^2 / 2$\\
+  $FTC2$ & $d/dx \int_0^x f(t) dt = f(x)$\\
+  $FTC2$ Chain Rule & $d/dx \int_0^{g(x)} f(t) dt = g'(x) \cdot f(g(x))$ \\
+  Weighted Average & $\int_a^b f(x) w(x) dx / \int_a^b w(x) dx$\\
+\end{tabular}
+\end{section}
+\begin{section}{L'H\^opital's Rule}
+  \[ \lim_{x \to a} f(x)/g(x) = \lim_{x \to a} f'(x)/g'(x) \]
+  \begin{tabular}{l l}
+    $0/0$&Straight up\\
+    $\infty/\infty$&Straight up\\
+    $0 \cdot \infty$ & Rewrite as quotient\\
+    $0^0$& Rewrite as $e^{ln(f)}$ \\
+    $\infty^0$& Rewrite as $e^{ln(f)}$ \\
+    $1^\infty$& Rewrite as $e^{ln(f)}$ \\
+    $\infty - \infty$&Good luck \\
+    Otherwise & Forget it. \\
+  \end{tabular}
+\end{section}
