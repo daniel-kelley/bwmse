@@ -5,15 +5,34 @@
 %
 %
 
-\begin{section}{Ohm's Law (DC)}
-  \begin{tabular}{|l|l|l|l|l|}
-    \hline              &  $I$      & $R$     & $E$     & $P$     \\
-    \hline   $I$ \& $R$ &           &         & $IR$    &  $I^2R$ \\
-    \hline   $I$ \& $E$ &           & $E/I$   &         &  $EI$   \\
-    \hline   $I$ \& $P$ &           & $P/I^2$ & $P/I$   &         \\
-    \hline   $R$ \& $E$ &  $E/R$    &         &         & $E^2/R$ \\
-    \hline   $R$ \& $P$ & $\sqrt{P/R}$ &      & $\sqrt{PR}$ &     \\
-    \hline   $E$ \& $P$ & $P/E$     & $E^2/P$ &         &         \\
-    \hline
-\end{tabular}
+\begin{section}{DC Ohm's Law}
+  \renewcommand{\arraystretch}{1.5}
+  \begin{tabular}{llll}
+    $I$ & $=\frac{E}{R}$  & $=\frac{P}{E}$        & $=\sqrt{\frac{P}{R}}$  \\
+    $R$ & $=\frac{E}{I}$  & $=\frac{E^2}{P}$      & $=\frac{P}{I^2}$ \\
+    $E$ & $=IR$           & $=\frac{P}{I}$        & $=\sqrt{PR}$ \\
+    $P$ & $=EI$           & $=I^2R$               & $=\frac{E^2}{R}$ \\
+  \end{tabular}
+\end{section}
+
+\begin{section}{AC Ohm's Law}
+  \renewcommand{\arraystretch}{1.5}
+  \begin{tabular}{llll}
+    $I$
+    & $=\frac{E}{Z}$
+    & $=\frac{P}{E cos(\theta)}$
+    & $=\sqrt{\frac{P}{Z cos(\theta)}}$  \\
+    $Z$
+    & $=\frac{E}{I}$
+    & $=\frac{E^2 cos(\theta)}{P}$
+    & $=\frac{P}{I^2 cos(\theta)}$ \\
+    $E$
+    & $=IZ$
+    & $=\frac{P}{I cos(\theta)}$
+    & $=\sqrt{\frac{PZ}{cos(\theta)}}$ \\
+    $P$
+    & $=EI cos(\theta)$
+    & $=I^2Z cos(\theta)$
+    & $=\frac{E^2 cos(\theta)}{Z}$ \\
+  \end{tabular}
 \end{section}
