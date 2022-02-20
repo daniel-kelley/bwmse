@@ -31,8 +31,8 @@ jobs:
       run: |
         make REL=/var/tmp/website/bwmse release
         cp bwmse.pdf /var/tmp/website/bwmse
-        git -C /var/tmp/website config user.name dkelley
-        git -C /var/tmp/website config user.email dkelley@gmp.san-jose.ca.us
+        git -C /var/tmp/website config user.name github-actions
+        git -C /var/tmp/website config user.email github-actions@github.com
         git -C /var/tmp/website add bwmse
         git -C /var/tmp/website commit -m "bwmse generated from repository push"
         git -C /var/tmp/website push
