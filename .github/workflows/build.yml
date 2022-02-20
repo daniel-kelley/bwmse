@@ -1,0 +1,23 @@
+name: Build
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: prep
+      run: |
+        TEXMFHOME=`kpsewhich -var-value=TEXMFHOME`
+        git clone https://github.com/daniel-kelley/datasheet $TEXMFHOME
+    - name: make pdf
+      run: make pdf
+    - name: make html
+      run: make html
