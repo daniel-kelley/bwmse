@@ -18,8 +18,8 @@ jobs:
         sudo apt-get install texlive-latex-extra
         TEXMFHOME=`kpsewhich -var-value=TEXMFHOME`
         mkdir -p $TEXMFHOME/tex/latex
-        git clone https://github.com/daniel-kelley/datasheet $TEXMFHOME/tex/latex
-        ls $TEXMFHOME/tex/latex
+        git clone https://github.com/daniel-kelley/datasheet $TEXMFHOME/tex/latex/datasheet
+        ls $TEXMFHOME/tex/latex/datasheet
     - name: make pdf
       run: make pdf
     - name: make html
