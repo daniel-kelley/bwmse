@@ -16,6 +16,7 @@ jobs:
     - name: prep
       run: |
         sudo apt-get install texlive-latex-extra
+        sudo apt-get install latexmk
         TEXMFHOME=`kpsewhich -var-value=TEXMFHOME`
         mkdir -p $TEXMFHOME/tex/latex
         git clone https://github.com/daniel-kelley/datasheet $TEXMFHOME/tex/latex/datasheet
