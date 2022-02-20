@@ -17,6 +17,7 @@ jobs:
       run: |
         sudo apt-get install texlive-full
         sudo apt-get install latexmk
+        sudo apt-get install poppler-utils
         TEXMFHOME=`kpsewhich -var-value=TEXMFHOME`
         mkdir -p $TEXMFHOME/tex/latex
         git clone https://github.com/daniel-kelley/datasheet $TEXMFHOME/tex/latex/datasheet
