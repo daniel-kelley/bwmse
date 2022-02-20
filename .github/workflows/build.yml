@@ -17,7 +17,8 @@ jobs:
       run: |
         sudo apt-get install texlive-full
         TEXMFHOME=`kpsewhich -var-value=TEXMFHOME`
-        git clone https://github.com/daniel-kelley/datasheet $TEXMFHOME
+        mkdir $TEXMFHOME/tex/latex
+        git clone https://github.com/daniel-kelley/datasheet $TEXMFHOME/tex/latex
     - name: make pdf
       run: make pdf
     - name: make html
