@@ -21,8 +21,18 @@ jobs:
         TEXMFHOME=`kpsewhich -var-value=TEXMFHOME`
         mkdir -p $TEXMFHOME/tex/latex
         git clone https://github.com/daniel-kelley/datasheet $TEXMFHOME/tex/latex/datasheet
+        git clone https://github.com/daniel-kelley/daniel-kelley.github.io /var/tmp/website
         ls $TEXMFHOME/tex/latex/datasheet
     - name: make pdf
       run: make pdf
     - name: make html
       run: make html
+    - name: release
+      run: |
+        make REL=/var/tmp/website/bwmse release
+        cp bwmse.pdf /var/tmp/website/bwmse
+        git -C /var/tmp/website config user.name dkelley
+        git -C /var/tmp/website config user.email dkelley@gmp.san-jose.ca.us
+        git -C /var/tmp/website add bwmse
+        git -C /var/tmp/website commit -m "bwmse generated from repository push"
+        git -C /var/tmp/website push
