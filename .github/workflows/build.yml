@@ -1,0 +1,29 @@
+name: Build
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: prep
+      run: |
+        sudo apt-get install texlive-full
+        sudo apt-get install latexmk
+        sudo apt-get install poppler-utils
+        TEXMFHOME=`kpsewhich -var-value=TEXMFHOME`
+        mkdir -p $TEXMFHOME/tex/latex
+        git clone https://github.com/daniel-kelley/datasheet $TEXMFHOME/tex/latex/datasheet
+        git clone https://github.com/daniel-kelley/daniel-kelley.github.io /var/tmp/website
+        ls $TEXMFHOME/tex/latex/datasheet
+    - name: make pdf
+      run: make pdf
+    - name: make html
+      run: make html
