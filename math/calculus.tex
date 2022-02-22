@@ -37,5 +37,46 @@
 \begin{section}{Partial Differentiation}
   \begin{tabular}{l l}
     Approximation & $f(x,y)=z_0 + \frac{\partial{f}}{\partial{x}}(x-x_0) + \frac{\partial{f}}{\partial{y}}(y-y_0)$ \\
+    Least Square Line & \begin{math}
+       \left(
+         \begin{array}{c c}
+           \sum x_i^2 & \sum x_i \\
+           \sum x_i & n \\
+         \end{array}
+       \right)^{-1}
+       \left(
+       \begin{array}{c}
+         \sum x_i y_i \\
+         \sum y_i \\
+       \end{array}
+       \right)
+       =
+       \left(
+       \begin{array}{c}
+         a \\
+         b \\
+       \end{array}
+       \right)
+    \end{math}
+    for $y = ax + b$ given $n$ points $(x_i,y_i)$
+    \\
+
   \end{tabular}
+  \begin{section}{Second Derivative Test}
+    Given $f(x,y)$ critical points $(x_c,y_c)$ where $\frac{\partial{f}}{\partial{x}}=0$ and  $\frac{\partial{f}}{\partial{y}}=0$
+
+    \begin{tabular}{l}
+      $A = \frac{\partial{f}^2}{\partial^2{x}}@(x_c,y_c)$ \\
+      $B = \frac{\partial{f}^2}{\partial{x}\partial{y}}@(x_c,y_c)$ \\
+      $C = \frac{\partial{f}^2}{\partial^2{y}}@(x_c,y_c)$ \\
+    \end{tabular}
+
+    \begin{tabular}{l l}
+      $AC-B^2 > 0$ ,$A>0$ or $C>0$  & Minimum point \\
+      $AC-B^2 > 0$,$A<0$ or $C<0$  & Maximum point \\
+      $AC-B^2 < 0$  & Saddle point \\
+      $AC-B^2 = 0$  & Need higher order terms to conclude \\
+    \end{tabular}
+
+  \end{section}
 \end{section}
