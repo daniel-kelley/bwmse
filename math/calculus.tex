@@ -40,31 +40,27 @@
       z-z_0 =(\frac{\partial{f}}{\partial{x}})_{x_{0}}(x-x_0) + (\frac{\partial{f}}{\partial{y}})_{y_{0}}(y-y_0)
       \end{math} \\
     Approximation & $f(x,y)=z_0 + \frac{\partial{f}}{\partial{x}}(x-x_0) + \frac{\partial{f}}{\partial{y}}(y-y_0)$ \\
-    Least Square Line & \begin{math}
-       \left(
-         \begin{array}{c c}
-           \sum x_i^2 & \sum x_i \\
-           \sum x_i & n \\
-         \end{array}
-       \right)^{-1}
-       \left(
-       \begin{array}{c}
-         \sum x_i y_i \\
-         \sum y_i \\
-       \end{array}
-       \right)
-       =
-       \left(
-       \begin{array}{c}
-         a \\
-         b \\
-       \end{array}
-       \right)
-    \end{math}
-    for $y = ax + b$ given $n$ points $(x_i,y_i)$
-    \\
 
   \end{tabular}
+  % lwarp seems to have problems with this construct in the table above.
+  \begin{section}{Least Square Line}
+    \begin{math}
+      \begin{pmatrix}
+        \sum x_i^2 & \sum x_i \\
+        \sum x_i & n \\
+      \end{pmatrix}^{-1}
+      \begin{pmatrix}
+        \sum x_i y_i \\
+        \sum y_i \\
+      \end{pmatrix}
+      =
+      \begin{pmatrix}
+        a \\
+        b \\
+      \end{pmatrix}
+    \end{math}
+    for $y = ax + b$ given $n$ points $(x_i,y_i)$
+  \end{section}
   \begin{section}{Second Derivative Test}
     Given $f(x,y)$ critical points $(x_c,y_c)$ where $\frac{\partial{f}}{\partial{x}}=0$ and  $\frac{\partial{f}}{\partial{y}}=0$
 
