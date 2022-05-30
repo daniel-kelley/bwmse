@@ -83,4 +83,57 @@
     $\frac{df}{dt}=
     f_{x}\frac{dx}{dt} + f_{y}\frac{dy}{dt} + f_{z}\frac{dz}{dt}$
   \end{section}
+
+  \begin{section}{Level Curves and Surfaces}
+    The \emph{level curve} for a function $f(x,y)$ is the set of
+    points $(x,y)$ where $f(x,y)=C$ for constant $C$.
+  \end{section}
+
+  \begin{section}{Gradient}
+    The \emph{gradient} $\nabla{f}$ of function $f$ is a vector of the
+    partial derivatives of $f$ for each independant variable; e.g.
+    $\nabla f(x,y) = \langle f_x,f_y \rangle $.
+    $\nabla{f} \perp f(x,y)$, i.e.  \emph{gradient} $\perp$
+    \emph{level curve}.
+
+    The \emph{directional derivitive} of $f$ at the point $P$ in the
+    direction of $\vec{u}$ is
+    $\frac{df}{ds}\biggr\rvert_{P,\vec{u}}=\nabla{f}(P)\cdot\vec{u}$.
+
+    Given an \emph{objective} function $f$ and a \emph{constraint}
+    function $g=C$ for constant $C$, the \emph{extrema} of $f$
+    are found when $\nabla{f} \parallel \nabla{g}$. The
+    \emph{Lagrange multiplier} $\lambda$ is
+    $\frac{\nabla{f}}{\nabla{g}}$.
+  \end{section}
+  \begin{section}{Center of Mass}
+    \begin{align*}
+      M&=\int\int_R{\delta} \,dA\\
+      \bar{x}&=\frac{1}{M}\int\int_R{x\delta} \,dA\\
+      \bar{y}&=\frac{1}{M}\int\int_R{y\delta} \,dA\\
+    \end{align*}
+  \end{section}
+  \begin{section}{Change of Variables}
+    \begin{align*}
+      \int\int_R{f(x,y) \,dx \,dy} &=\int\int_R{g(u,v)\, |J| \,du \,dv} \\
+      g(u,v) &= f(x(u,v),y(u,v)) \\
+      |J| &=
+            \begin{vmatrix}
+              \frac{\partial{(x,y)}}{\partial{(u,v)}}\\
+            \end{vmatrix} =
+      \begin{vmatrix}
+        \frac{\partial{x}}{\partial{u}} & \frac{\partial{x}}{\partial{v}}\\
+        \frac{\partial{y}}{\partial{u}} & \frac{\partial{y}}{\partial{v}}\\
+      \end{vmatrix} \\
+      \begin{vmatrix}
+        \frac{\partial{(x,y)}}{\partial{(u,v)}}\\
+      \end{vmatrix}
+      \cdot
+      \begin{vmatrix}
+        \frac{\partial{(u,v)}}{\partial{(x,y)}}
+      \end{vmatrix}
+      &= 1
+    \end{align*}
+  \end{section}
+
 \end{section}
