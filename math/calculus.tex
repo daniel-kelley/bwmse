@@ -24,6 +24,82 @@
   \end{tabular}
 
 \end{section}
+
+\begin{section}{Vector Products}
+\begin{section}{Dot Product}
+  \begin{figure}[h!]
+    \begin{center}
+      \begin{tikzpicture}[scale=0.5]
+        \draw [thick, ->] (0,0) to (5,0);
+        \draw [thick, ->] (0,0) to (3.9,2.25);
+        \draw [thick,dashed] (3.9,2.0) to (3.9,0);
+        \draw [thick, ->] (1,0) arc
+	[start angle=0, end angle=60, radius=0.5];
+        \draw [fill] (1.5,1.8) node [black,right] {$B$};
+        \draw [fill] (1.5,-0.5) node [black,right] {$A$};
+        \draw [fill] (1.1,0.35) node [black,right] {$\theta$};
+      \end{tikzpicture}
+      \caption{Dot Product}
+    \end{center}
+  \end{figure}
+  $\vec{A}\cdot\vec{B} = \left|A\right|\left|B\right|cos(\theta)$
+
+  The scalar value of the dot product is the length of the projection of
+  $\vec{B}$ onto $\vec{A}$.
+  \begin{align*}
+    \vec{A}\cdot\vec{B} &=0&&\text{Vectors are orthogonal.} \\
+    \vec{A}\cdot\vec{B} &>0&&\theta \text{ is acute.} \\
+    \vec{A}\cdot\vec{B} &<0&&\theta \text{ is obtuse.} \\
+  \end{align*}
+
+\end{section}
+
+\begin{section}{Cross Product}
+  \begin{figure}[h!]
+    \begin{center}
+      \begin{tikzpicture}[scale=0.5]
+        \begin{scope}[canvas is xy plane at z=0]
+        \draw [->] (-2,1) to (-1,1);
+        \draw [fill] (-1,1) node [black,right] {$x$};
+        \draw [->] (-2,1) to (-2,2);
+        \draw [fill] (-2.5,2.5) node [black,right] {$y$};
+        \draw [thick, ->] (0,0) to (5,0);
+        \draw [thick, ->] (0,0) to (3.9,2.25);
+        \draw [thick,dashed,->] (3.9,2.25) to (8.6,2.25);
+        \draw [thick,dashed,->] (5,0) to (8.9,2.25);
+        \draw [thick, ->] (1,0) arc
+	[start angle=0, end angle=60, radius=0.5];
+        \draw [fill] (1.5,1.8) node [black,right] {$B$};
+        \draw [fill] (1.5,-0.5) node [black,right] {$A$};
+        \draw [fill] (1.1,0.35) node [black,right] {$\theta$};
+        \draw[help lines] (0,0) grid (10,3);
+        \end{scope}
+        \begin{scope}[canvas is zx plane at y=0]
+          \draw [thick, ->] (0,0) to (8.775,0);
+          \draw [fill] (8.8,0) node [black,right] {$\hat{n}$};
+        \end{scope}
+        \begin{scope}[canvas is zx plane at y=1]
+          \draw [->] (0,-2) to (1,-2);
+          \draw [fill] (1.5,-2.7) node [black,right] {$z$};
+        \end{scope}
+      \end{tikzpicture}
+      \caption{Cross Product}
+    \end{center}
+  \end{figure}
+  $\vec{A}\times\vec{B} = \left|A\right|\left|B\right|sin(\theta)\hat{n}$
+
+  The vector value of the cross product is the area of the
+  parallelogram formed by $\vec{B}$ and $\vec{A}$ and is the length of
+  the vector normal to the plane of the parallelogram following the
+  right hand rule.
+    \begin{align*}
+    \vec{A}\times{B} &=0&&\text{Vectors are parallel.} \\
+  \end{align*}
+
+\end{section}
+\end{section}
+
+
 \begin{section}{Parametric Vector Calculus}
   \begin{tabular}{l l l l l l}
     Position & & & $\vec{r}(t)=x(t)\hat{i}+y(t)\hat{j}$  & $\int \vec{v}(t) dt$ &\\
