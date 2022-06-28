@@ -155,18 +155,20 @@
   \end{section}
 
   \begin{section}{Vector Field}
-    \begin{tabular}{l l}
-     $\vec{F}$ & Field \\
-     $M$ & Field component in $x$ direction ($\hat{i}$)\\
-     $N$ & Field component in $y$ direction ($\hat{j}$)\\
-     $C$ & Curve $\vec{r}(t)$ = $ \langle x(t),y(t) \rangle $\\
+    \begin{tabular}{l l l}
+     $\vec{F}$ & Field & \\
+     $M$ & Field component in $x$ direction ($\hat{i}$) & $F_x$ \\
+     $N$ & Field component in $y$ direction ($\hat{j}$) & $F_y$ \\
+     $C$ & Curve $\vec{r}(t)$ = $ \langle x(t),y(t) \rangle $ & \\
    \end{tabular}
     \begin{align*}
-     \vec{F}(x,y) &= \langle M,N \rangle \\
-     \vec{F}(x,y) &= M(x,y)\hat{i} + N(x,y)\hat{j}\\
+      \vec{F}(x,y) &= \langle M,N \rangle \\
+      \vec{F}(x,y) &= M(x,y)\hat{i} + N(x,y)\hat{j}\\
+      \text{curl}\,\vec{F} &= N_x - M_y  \\
     \end{align*}
   \end{section}
 
+  % TODO: picture of Line Integral like in Simmons
   \begin{section}{Line Integral}
     \begin{align*}
       C &=\vec{r}(t) \\
@@ -192,6 +194,8 @@
       \text{If $\vec{r}$ is a closed path}\\
     \end{align*}
   \end{section}
+
+% TODO: Potential Functions
 
 %  \begin{section}{}
 %    \begin{tabular}{l l}
