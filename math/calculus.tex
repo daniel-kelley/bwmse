@@ -27,7 +27,7 @@
 
 \begin{section}{Vector Products}
   \begin{subsection}{Dot Product}
-    \begin{figure}[h!]
+    \begin{figure}[H]
       \begin{center}
         \begin{tikzpicture}[scale=0.5]
           \draw [thick, ->] (0,0) to (5,0);
@@ -54,7 +54,7 @@
   \end{subsection}
 
   \begin{subsection}{Cross Product}
-    \begin{figure}[h!]
+    \begin{figure}[H]
       \begin{center}
         \begin{tikzpicture}[scale=0.5]
           \begin{scope}[canvas is xy plane at z=0]
@@ -90,7 +90,7 @@
 
     Geometrically, the vector value of the cross product is the area
     of the parallelogram formed by $\vec{B}$ and $\vec{A}$ times the
-    unit vector $\vec{n}$ normal to the plane of the parallelogram
+    unit vector $\hat{n}$ normal to the plane of the parallelogram
     following the right hand rule.
 
   \end{subsection}
@@ -113,7 +113,7 @@
     Velocity & $d\vec{r}(t)/dt$ & & $\vec{v}(t)=x'(t)\hat{i}+y'(t)\hat{j}$ &  $\int \vec{a}(t) dt$& $\frac{ds}{dt} \vec{T}$\\
     Acceleration & $d\vec{v}(t)/dt$ & $d^2\vec{r}(t)/dt^2$ & $\vec{v}(t)=x''(t)\hat{i}+y''(t)\hat{j}$ & &\\
     Arc Length & $\frac{ds}{dt} = \sqrt{x'(t)\hat{i}+y'(t)\hat{j}}$  & & & & \\
-    Unit Tangent & $\vec{T}=\vec{v}/\left| \vec{v} \right|$ &&&&
+    Unit Tangent & $\hat{T}=\vec{v}/\left| \vec{v} \right|$ &&&&
   \end{tabular}
 
 \end{section}
@@ -251,17 +251,71 @@
     \end{align*}
   \end{section}
 
-  % TODO: picture of Line Integral like in Simmons
   \begin{section}{Line Integral}
     \begin{align*}
       C &=\vec{r}(t) \\
       \vec{r}(t) &=\langle x(t),y(t) \rangle  \\
       P(t) &= M(x,y) \\
       Q(t) &= N(x,y) \\
-      \int_C \vec{F} \cdot d\vec{r} &= \int_C \langle M,N \rangle \cdot \langle dx,dy \rangle \\
-       &= \int_C M\,dx + N\,dy \\
-       &= \int_C (P + Q) \,dt \\
     \end{align*}
+    \begin{subsection}{Work}
+      Force on particle along a curve.
+      \begin{figure}[H]
+        \begin{center}
+          \begin{tikzpicture}
+            % x = 23*t^3 - 33*t^2 + 18*t + 1
+            % y = 22*t^3 - 33*t^2 + 12*t + 2
+            \draw (1,2) .. controls (7,6) and (2,-1) .. (9,3);
+            \draw (0,0) to (0,4);
+            \draw (0,0) to (9,0);
+            \draw [->] (0,0) to (3.464, 3.256); %t= 0.2
+            % \draw (2,2.977) to (5,3.549); % tangent line at t=0.2
+            \draw [->] (3.464, 3.256) to (4.446,3.443); % tangent unit vector
+            \draw [->] (3.464, 3.256) to (4.464, 2.256); % force vector
+            \draw [fill] (1.1,2.7) node [black,right] {$C$};
+            \draw [fill] (0.7,0.5) node [black,right] {$\vec{r}$};
+            \draw [fill] (4.3,1.9) node [black,right] {$\vec{F}$};
+            \draw [fill] (4.5,3.5) node [black,right] {$\hat{T}$};
+          \end{tikzpicture}
+          \caption{Work}
+        \end{center}
+      \end{figure}
+      \begin{align*}
+        \int_C \vec{F} \cdot d\vec{r} &= \int_C \vec{F} \cdot \hat{T} \, ds \\
+                                      &= \int_C \langle M,N \rangle \cdot \langle dx,dy \rangle \\
+                                      &= \int_C M\,dx + N\,dy \\
+                                      &= \int_C (P + Q) \,dt \\
+      \end{align*}
+    \end{subsection} % Work
+    \begin{subsection}{Flow}
+      Flow across a curve.
+      \begin{figure}[H]
+        \begin{center}
+          \begin{tikzpicture}
+            % x = 23*t^3 - 33*t^2 + 18*t + 1
+            % y = 22*t^3 - 33*t^2 + 12*t + 2
+            \draw (1,2) .. controls (7,6) and (2,-1) .. (9,3);
+            \draw (0,0) to (0,4);
+            \draw (0,0) to (9,0);
+            \draw [->] (0,0) to (3.464, 3.256); %t= 0.2
+            % \draw (2,2.977) to (5,3.549); % tangent line at t=0.2
+            \draw [->] (3.464, 3.256) to (3.651, 2.274); % normal unit vector
+            \draw [->] (3.464, 3.256) to (4.464, 2.256); % force vector
+            \draw [fill] (1.1,2.7) node [black,right] {$C$};
+            \draw [fill] (0.7,0.5) node [black,right] {$\vec{r}$};
+            \draw [fill] (4.3,1.9) node [black,right] {$\vec{F}$};
+            \draw [fill] (3.6,2.2) node [black,right] {$\hat{n}$};
+          \end{tikzpicture}
+          \caption{Flow}
+        \end{center}
+      \end{figure}
+      \begin{align*}
+        \int_C \vec{F}\cdot\hat{n}\,ds
+                                      &= \int_C \langle M,N \rangle \cdot \langle dy,-dx \rangle \\
+                                      &= \int_C -N\,dx + M\,dy \\
+                                      &= \int_C (Q + P) \,dt \\
+      \end{align*}
+    \end{subsection} % Flow
   \end{section}
 
   \begin{section}{Gradient Field}
