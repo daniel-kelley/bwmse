@@ -24,13 +24,96 @@
   \end{tabular}
 
 \end{section}
+
+\begin{section}{Vector Products}
+  \begin{subsection}{Dot Product}
+    \begin{figure}[H]
+      \begin{center}
+        \begin{tikzpicture}[scale=0.5]
+          \draw [thick, ->] (0,0) to (5,0);
+          \draw [thick, ->] (0,0) to (3.9,2.25);
+          \draw [thick,dashed] (3.9,2.0) to (3.9,0);
+          \draw [thick, ->] (1,0) arc
+          [start angle=0, end angle=60, radius=0.5];
+          \draw [fill] (1.5,1.8) node [black,right] {$B$};
+          \draw [fill] (1.5,-0.5) node [black,right] {$A$};
+          \draw [fill] (1.1,0.35) node [black,right] {$\theta$};
+        \end{tikzpicture}
+        \caption{Dot Product}
+      \end{center}
+    \end{figure}
+    $\vec{A}\cdot\vec{B} =
+    \left|\vec{A}\right|\left|\vec{B}\right|cos(\theta)$
+
+    The scalar value of the dot product is the sum of the product of
+    the vector components $\Sigma\, a_i \cdot b_i$
+
+    Geometrically, the scalar value is the length of the projection of
+    $\vec{B}$ onto $\vec{A}$.
+
+  \end{subsection}
+
+  \begin{subsection}{Cross Product}
+    \begin{figure}[H]
+      \begin{center}
+        \begin{tikzpicture}[scale=0.5]
+          \begin{scope}[canvas is xy plane at z=0]
+            \draw [->] (-2,1) to (-1,1);
+            \draw [fill] (-1,1) node [black,right] {$x$};
+            \draw [->] (-2,1) to (-2,2);
+            \draw [fill] (-2.5,2.5) node [black,right] {$y$};
+            \draw [thick, ->] (0,0) to (5,0);
+            \draw [thick, ->] (0,0) to (3.9,2.25);
+            \draw [thick,dashed,->] (3.9,2.25) to (8.6,2.25);
+            \draw [thick,dashed,->] (5,0) to (8.9,2.25);
+            \draw [thick, ->] (1,0) arc
+            [start angle=0, end angle=60, radius=0.5];
+            \draw [fill] (1.5,1.8) node [black,right] {$B$};
+            \draw [fill] (1.5,-0.5) node [black,right] {$A$};
+            \draw [fill] (1.1,0.35) node [black,right] {$\theta$};
+            \draw[help lines] (0,0) grid (10,3);
+          \end{scope}
+          \begin{scope}[canvas is zx plane at y=0]
+            \draw [thick, ->] (0,0) to (8.775,0);
+            \draw [fill] (8.8,0) node [black,right] {$\hat{n}$};
+          \end{scope}
+          \begin{scope}[canvas is zx plane at y=1]
+            \draw [->] (0,-2) to (1,-2);
+            \draw [fill] (1.5,-2.7) node [black,right] {$z$};
+          \end{scope}
+        \end{tikzpicture}
+        \caption{Cross Product}
+      \end{center}
+    \end{figure}
+    $\vec{A}\times\vec{B} =
+    \left|\vec{A}\right|\left|\vec{B}\right|sin(\theta)\hat{n}$
+
+    Geometrically, the vector value of the cross product is the area
+    of the parallelogram formed by $\vec{B}$ and $\vec{A}$ times the
+    unit vector $\hat{n}$ normal to the plane of the parallelogram
+    following the right hand rule.
+
+  \end{subsection}
+  \begin{subsection}{Special Values}
+    \begin{align*}
+      \vec{A}\cdot\vec{B} &>0&&\theta \text{ is acute.} \\
+      \vec{A}\cdot\vec{B} &<0&&\theta \text{ is obtuse.} \\
+      \vec{A}\cdot\vec{B} &=0&&\text{Vectors are orthogonal.} \\
+      \vec{A}\times\vec{B} &=0&&\text{Vectors are parallel.} \\
+    \end{align*}
+
+  \end{subsection}
+
+\end{section}
+
+
 \begin{section}{Parametric Vector Calculus}
   \begin{tabular}{l l l l l l}
     Position & & & $\vec{r}(t)=x(t)\hat{i}+y(t)\hat{j}$  & $\int \vec{v}(t) dt$ &\\
     Velocity & $d\vec{r}(t)/dt$ & & $\vec{v}(t)=x'(t)\hat{i}+y'(t)\hat{j}$ &  $\int \vec{a}(t) dt$& $\frac{ds}{dt} \vec{T}$\\
     Acceleration & $d\vec{v}(t)/dt$ & $d^2\vec{r}(t)/dt^2$ & $\vec{v}(t)=x''(t)\hat{i}+y''(t)\hat{j}$ & &\\
     Arc Length & $\frac{ds}{dt} = \sqrt{x'(t)\hat{i}+y'(t)\hat{j}}$  & & & & \\
-    Unit Tangent & $\vec{T}=\vec{v}/\left| \vec{v} \right|$ &&&&
+    Unit Tangent & $\hat{T}=\vec{v}/\left| \vec{v} \right|$ &&&&
   \end{tabular}
 
 \end{section}
@@ -155,15 +238,16 @@
   \end{section}
 
   \begin{section}{Vector Field}
-    \begin{tabular}{l l}
-     $\vec{F}$ & Field \\
-     $M$ & Field component in $x$ direction ($\hat{i}$)\\
-     $N$ & Field component in $y$ direction ($\hat{j}$)\\
-     $C$ & Curve $\vec{r}(t)$ = $ \langle x(t),y(t) \rangle $\\
+    \begin{tabular}{l l l}
+     $\vec{F}$ & Field & \\
+     $M$ & Field component in $x$ direction ($\hat{i}$) & $F_x$ \\
+     $N$ & Field component in $y$ direction ($\hat{j}$) & $F_y$ \\
+     $C$ & Curve $\vec{r}(t)$ = $ \langle x(t),y(t) \rangle $ & \\
    \end{tabular}
     \begin{align*}
-     \vec{F}(x,y) &= \langle M,N \rangle \\
-     \vec{F}(x,y) &= M(x,y)\hat{i} + N(x,y)\hat{j}\\
+      \vec{F}(x,y) &= \langle M,N \rangle \\
+      \vec{F}(x,y) &= M(x,y)\hat{i} + N(x,y)\hat{j}\\
+      \text{curl}\,\vec{F} &= N_x - M_y  \\
     \end{align*}
   \end{section}
 
@@ -173,11 +257,88 @@
       \vec{r}(t) &=\langle x(t),y(t) \rangle  \\
       P(t) &= M(x,y) \\
       Q(t) &= N(x,y) \\
-      \int_C \vec{F} \cdot d\vec{r} &= \int_C \langle M,N \rangle \cdot \langle dx,dy \rangle \\
-       &= \int_C M\,dx + N\,dy \\
-       &= \int_C (P + Q) \,dt \\
+    \end{align*}
+    \begin{subsection}{Work}
+      Force on particle along a curve.
+      \begin{figure}[H]
+        \begin{center}
+          \begin{tikzpicture}
+            % x = 23*t^3 - 33*t^2 + 18*t + 1
+            % y = 22*t^3 - 33*t^2 + 12*t + 2
+            \draw (1,2) .. controls (7,6) and (2,-1) .. (9,3);
+            \draw (0,0) to (0,4);
+            \draw (0,0) to (9,0);
+            \draw [->] (0,0) to (3.464, 3.256); %t= 0.2
+            % \draw (2,2.977) to (5,3.549); % tangent line at t=0.2
+            \draw [->] (3.464, 3.256) to (4.446,3.443); % tangent unit vector
+            \draw [->] (3.464, 3.256) to (4.464, 2.256); % force vector
+            \draw [fill] (1.1,2.7) node [black,right] {$C$};
+            \draw [fill] (0.7,0.5) node [black,right] {$\vec{r}$};
+            \draw [fill] (4.3,1.9) node [black,right] {$\vec{F}$};
+            \draw [fill] (4.5,3.5) node [black,right] {$\hat{T}$};
+          \end{tikzpicture}
+          \caption{Work}
+        \end{center}
+      \end{figure}
+      \begin{align*}
+        \int_C \vec{F} \cdot d\vec{r} &= \int_C \vec{F} \cdot \hat{T} \, ds \\
+                                      &= \int_C \langle M,N \rangle \cdot \langle dx,dy \rangle \\
+                                      &= \int_C M\,dx + N\,dy \\
+                                      &= \int_C (P + Q) \,dt \\
+      \end{align*}
+    \end{subsection} % Work
+    \begin{subsection}{Flow}
+      Flow across a curve.
+      \begin{figure}[H]
+        \begin{center}
+          \begin{tikzpicture}
+            % x = 23*t^3 - 33*t^2 + 18*t + 1
+            % y = 22*t^3 - 33*t^2 + 12*t + 2
+            \draw (1,2) .. controls (7,6) and (2,-1) .. (9,3);
+            \draw (0,0) to (0,4);
+            \draw (0,0) to (9,0);
+            \draw [->] (0,0) to (3.464, 3.256); %t= 0.2
+            % \draw (2,2.977) to (5,3.549); % tangent line at t=0.2
+            \draw [->] (3.464, 3.256) to (3.651, 2.274); % normal unit vector
+            \draw [->] (3.464, 3.256) to (4.464, 2.256); % force vector
+            \draw [fill] (1.1,2.7) node [black,right] {$C$};
+            \draw [fill] (0.7,0.5) node [black,right] {$\vec{r}$};
+            \draw [fill] (4.3,1.9) node [black,right] {$\vec{F}$};
+            \draw [fill] (3.6,2.2) node [black,right] {$\hat{n}$};
+          \end{tikzpicture}
+          \caption{Flow}
+        \end{center}
+      \end{figure}
+      \begin{align*}
+        \int_C \vec{F}\cdot\hat{n}\,ds
+                                      &= \int_C \langle M,N \rangle \cdot \langle dy,-dx \rangle \\
+                                      &= \int_C -N\,dx + M\,dy \\
+                                      &= \int_C (Q + P) \,dt \\
+      \end{align*}
+    \end{subsection} % Flow
+  \end{section}
+
+  \begin{section}{Gradient Field}
+
+    If $\vec{F}(x,y) == \nabla{f}$
+
+    \begin{align*}
+      \int_a^b \vec{F} \cdot d\vec{r} &= f(b) - f(a) &&
+      \text{Fundamental Theorem for Line Integrals}\\
+      \int_{C_1} \vec{F} \cdot d\vec{r} &= \int_{C_2} \vec{F} \cdot d\vec{r} &&
+      \text{Path independence}\\
+      \oint \vec{F} \cdot d\vec{r} &= 0 &&
+      \text{If $\vec{r}$ is a closed path}\\
     \end{align*}
   \end{section}
+
+  \begin{section}{Green's Theorem}
+    \begin{align*}
+      \oint_C \vec{F} \cdot d\vec{r} &= \int\int_R curl(\vec{F})\,dA && \\
+    \end{align*}
+  \end{section}
+
+% TODO: Potential Functions
 
 %  \begin{section}{}
 %    \begin{tabular}{l l}
