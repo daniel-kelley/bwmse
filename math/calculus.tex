@@ -50,7 +50,7 @@
 
     Geometrically, the scalar value is the length of the projection of
     $\vec{B}$ onto $\vec{A}$.
-
+    \FloatBarrier
   \end{subsection}
 
   \begin{subsection}{Cross Product}
@@ -92,6 +92,8 @@
     of the parallelogram formed by $\vec{B}$ and $\vec{A}$ times the
     unit vector $\hat{n}$ normal to the plane of the parallelogram
     following the right hand rule.
+
+    \FloatBarrier
 
   \end{subsection}
   \begin{subsection}{Special Values}
@@ -248,6 +250,7 @@
       \vec{F}(x,y) &= \langle M,N \rangle \\
       \vec{F}(x,y) &= M(x,y)\hat{i} + N(x,y)\hat{j}\\
       \text{curl}\,\vec{F} &= N_x - M_y  \\
+      \text{div}\,\vec{F} &= M_x + N_y  \\
     \end{align*}
   \end{section}
 
@@ -286,6 +289,7 @@
                                       &= \int_C M\,dx + N\,dy \\
                                       &= \int_C (P + Q) \,dt \\
       \end{align*}
+      \FloatBarrier
     \end{subsection} % Work
     \begin{subsection}{Flow}
       Flow across a curve.
@@ -315,6 +319,7 @@
                                       &= \int_C -N\,dx + M\,dy \\
                                       &= \int_C (Q + P) \,dt \\
       \end{align*}
+      \FloatBarrier
     \end{subsection} % Flow
   \end{section}
 
@@ -334,7 +339,8 @@
 
   \begin{section}{Green's Theorem}
     \begin{align*}
-      \oint_C \vec{F} \cdot d\vec{r} &= \int\int_R curl(\vec{F})\,dA && \\
+      \oint_C \vec{F} \cdot d\vec{r} &= \int\int_R curl(\vec{F})\,dA && \text{tangental} \\
+      \oint_C \vec{F} \cdot \hat{n}\, ds &= \int\int_R div(\vec{F})\,dA && \text{normal} \\
     \end{align*}
   \end{section}
 
