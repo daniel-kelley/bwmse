@@ -257,6 +257,7 @@
   \begin{section}{Line Integral}
     \begin{align*}
       C &=\vec{r}(t) \\
+      s &= \text{arc-length}(C) \\
       \vec{r}(t) &=\langle x(t),y(t) \rangle  \\
       P(t) &= M(x,y) \\
       Q(t) &= N(x,y) \\
@@ -275,7 +276,8 @@
             % \draw (2,2.977) to (5,3.549); % tangent line at t=0.2
             \draw [->] (3.464, 3.256) to (4.446,3.443); % tangent unit vector
             \draw [->] (3.464, 3.256) to (4.464, 2.256); % force vector
-            \draw [fill] (1.1,2.7) node [black,right] {$C$};
+            \draw [fill] (1.0,2.0) node [black,left] {$C$};
+            \draw [fill] (2.0,2.8) node [black,left] {$s$};
             \draw [fill] (0.7,0.5) node [black,right] {$\vec{r}$};
             \draw [fill] (4.3,1.9) node [black,right] {$\vec{F}$};
             \draw [fill] (4.5,3.5) node [black,right] {$\hat{T}$};
@@ -305,7 +307,8 @@
             % \draw (2,2.977) to (5,3.549); % tangent line at t=0.2
             \draw [->] (3.464, 3.256) to (3.651, 2.274); % normal unit vector
             \draw [->] (3.464, 3.256) to (4.464, 2.256); % force vector
-            \draw [fill] (1.1,2.7) node [black,right] {$C$};
+            \draw [fill] (1.0,2.0) node [black,left] {$C$};
+            \draw [fill] (2.0,2.8) node [black,left] {$s$};
             \draw [fill] (0.7,0.5) node [black,right] {$\vec{r}$};
             \draw [fill] (4.3,1.9) node [black,right] {$\vec{F}$};
             \draw [fill] (3.6,2.2) node [black,right] {$\hat{n}$};
