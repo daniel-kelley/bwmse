@@ -50,7 +50,7 @@
 
     Geometrically, the scalar value is the length of the projection of
     $\vec{B}$ onto $\vec{A}$.
-
+    \FloatBarrier
   \end{subsection}
 
   \begin{subsection}{Cross Product}
@@ -92,6 +92,8 @@
     of the parallelogram formed by $\vec{B}$ and $\vec{A}$ times the
     unit vector $\hat{n}$ normal to the plane of the parallelogram
     following the right hand rule.
+
+    \FloatBarrier
 
   \end{subsection}
   \begin{subsection}{Special Values}
@@ -173,7 +175,8 @@
   \end{section}
 
   \begin{section}{Gradient}
-    The \emph{gradient} $\nabla{f}$ of function $f$ is a vector of the
+    The \emph{gradient} $\nabla{f}$ of (\emph{potential})
+    function $f$ is a vector of the
     partial derivatives of $f$ for each independant variable; e.g.
     $\nabla f(x,y) = \langle f_x,f_y \rangle $.
     $\nabla{f} \perp f(x,y)$, i.e.  \emph{gradient} $\perp$
@@ -248,12 +251,24 @@
       \vec{F}(x,y) &= \langle M,N \rangle \\
       \vec{F}(x,y) &= M(x,y)\hat{i} + N(x,y)\hat{j}\\
       \text{curl}\,\vec{F} &= N_x - M_y  \\
+      \text{div}\,\vec{F} &= M_x + N_y  \\
+    \end{align*}
+  \end{section}
+
+  \begin{section}{Rectangular/Polar Conversion}
+    \begin{align*}
+      x &= r\,cos(\theta) \\
+      y &= r\,sin(\theta) \\
+      \theta &= tan^{-1}(y/x) \\
+      r &= \sqrt{x^2+y^2} \\
+      dx\,dy &= r\,dr\,d\theta\\
     \end{align*}
   \end{section}
 
   \begin{section}{Line Integral}
     \begin{align*}
       C &=\vec{r}(t) \\
+      s &= \text{arc-length}(C) \\
       \vec{r}(t) &=\langle x(t),y(t) \rangle  \\
       P(t) &= M(x,y) \\
       Q(t) &= N(x,y) \\
@@ -272,7 +287,8 @@
             % \draw (2,2.977) to (5,3.549); % tangent line at t=0.2
             \draw [->] (3.464, 3.256) to (4.446,3.443); % tangent unit vector
             \draw [->] (3.464, 3.256) to (4.464, 2.256); % force vector
-            \draw [fill] (1.1,2.7) node [black,right] {$C$};
+            \draw [fill] (1.0,2.0) node [black,left] {$C$};
+            \draw [fill] (2.0,2.8) node [black,left] {$s$};
             \draw [fill] (0.7,0.5) node [black,right] {$\vec{r}$};
             \draw [fill] (4.3,1.9) node [black,right] {$\vec{F}$};
             \draw [fill] (4.5,3.5) node [black,right] {$\hat{T}$};
@@ -286,6 +302,7 @@
                                       &= \int_C M\,dx + N\,dy \\
                                       &= \int_C (P + Q) \,dt \\
       \end{align*}
+      \FloatBarrier
     \end{subsection} % Work
     \begin{subsection}{Flow}
       Flow across a curve.
@@ -301,7 +318,8 @@
             % \draw (2,2.977) to (5,3.549); % tangent line at t=0.2
             \draw [->] (3.464, 3.256) to (3.651, 2.274); % normal unit vector
             \draw [->] (3.464, 3.256) to (4.464, 2.256); % force vector
-            \draw [fill] (1.1,2.7) node [black,right] {$C$};
+            \draw [fill] (1.0,2.0) node [black,left] {$C$};
+            \draw [fill] (2.0,2.8) node [black,left] {$s$};
             \draw [fill] (0.7,0.5) node [black,right] {$\vec{r}$};
             \draw [fill] (4.3,1.9) node [black,right] {$\vec{F}$};
             \draw [fill] (3.6,2.2) node [black,right] {$\hat{n}$};
@@ -313,9 +331,18 @@
         \int_C \vec{F}\cdot\hat{n}\,ds
                                       &= \int_C \langle M,N \rangle \cdot \langle dy,-dx \rangle \\
                                       &= \int_C -N\,dx + M\,dy \\
-                                      &= \int_C (Q + P) \,dt \\
+                                      &= \int_C (P - Q) \,dt \\
       \end{align*}
+      \FloatBarrier
     \end{subsection} % Flow
+    \begin{subsection}{Area}
+      Area of a simply connected closed curve.
+      %% Need picture
+      \begin{align*}
+        A &= \frac{1}{2} \oint_C -y\,dx + x\,dy \\
+      \end{align*}
+      \FloatBarrier
+    \end{subsection} % Area
   \end{section}
 
   \begin{section}{Gradient Field}
@@ -334,7 +361,8 @@
 
   \begin{section}{Green's Theorem}
     \begin{align*}
-      \oint_C \vec{F} \cdot d\vec{r} &= \int\int_R curl(\vec{F})\,dA && \\
+      \oint_C \vec{F} \cdot d\vec{r} &= \int\int_R curl(\vec{F})\,dA && \text{tangental} \\
+      \oint_C \vec{F} \cdot \hat{n}\, ds &= \int\int_R div(\vec{F})\,dA && \text{normal} \\
     \end{align*}
   \end{section}
 
