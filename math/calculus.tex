@@ -284,6 +284,59 @@
     \end{align*}
   \end{section}
 
+  \begin{section}{Sinusoidal Functions}
+    \begin{tabular}{l l}
+      $A$ & Amplitude \\
+      $\omega$ & Angular Frequency\\
+      $\phi$ &Phase lag \\
+      $\tau$ & Time delay \\
+      $\nu$ & Frequency \\
+      $P$ & Period \\
+    \end{tabular}
+    \begin{align*}
+      f(t) &= A\,cos(\omega\,t - \phi) \\
+      f(t) &= A\,cos(\omega\,(t - \tau)) \\
+      \tau &= \phi / \omega \\
+      \nu &= \omega / 2\pi \\
+      P &= 1/\nu \\
+    \end{align*}
+  \end{section}
+
+  \begin{section}{Sinusoidal Identity}
+    \begin{align*}
+      a\,cos(\omega\,t)+b\,cos(\omega\,t) &= A\,cos(\omega\,t - \phi)
+    \end{align*}
+
+    \begin{tabular}{l l}
+      $a\,cos(\omega\,t)+b\,cos(\omega\,t)$ & Rectangular (Cartesian) form \\
+      $A\,cos(\omega\,t - \phi)$ & Amplitude-phase form \\
+    \end{tabular}
+
+    \begin{align*}
+      A &= \sqrt{a^2+b^2} \\
+      \phi &= tan^{-1}(b/a) \\
+      a+bi &= Ae^{i\phi} \\
+      a &= A\,cos(\phi) \\
+      b &= A\,sin(\phi)
+    \end{align*}
+    \begin{figure}[h!]
+      \begin{center}
+        \begin{tikzpicture}[scale=0.5]
+          \draw (0,0) to (3.9,0);
+          \draw (0,0) to (3.9,2.25);
+          \draw (3.9,2.25) to (3.9,0);
+          \draw [thick, ->] (1,0) arc
+          [start angle=0, end angle=60, radius=0.5];
+          \draw [fill] (1.5,1.8) node [black,right] {$A$};
+          \draw [fill] (1.5,-0.5) node [black,right] {$a$};
+          \draw [fill] (4.0,1.0) node [black,right] {$b$};
+          \draw [fill] (1.1,0.4) node [black,right] {$\phi$};
+        \end{tikzpicture}
+        \caption{$a+bi=Ae^{i\phi}$}
+      \end{center}
+    \end{figure}
+  \end{section}
+
   \begin{section}{Line Integral}
     \begin{align*}
       C &=\vec{r}(t) \\
