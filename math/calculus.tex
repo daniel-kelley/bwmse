@@ -246,7 +246,7 @@
      $M$ & Field component in $x$ direction ($\hat{i}$) & $F_x$ \\
      $N$ & Field component in $y$ direction ($\hat{j}$) & $F_y$ \\
      $C$ & Curve $\vec{r}(t)$ = $ \langle x(t),y(t) \rangle $ & \\
-   \end{tabular}
+    \end{tabular}
     \begin{align*}
       \vec{F}(x,y) &= \langle M,N \rangle \\
       \vec{F}(x,y) &= M(x,y)\hat{i} + N(x,y)\hat{j}\\
@@ -262,6 +262,25 @@
       \theta &= tan^{-1}(y/x) \\
       r &= \sqrt{x^2+y^2} \\
       dx\,dy &= r\,dr\,d\theta\\
+    \end{align*}
+  \end{section}
+
+  \begin{section}{Complex Arithmetic}
+    \begin{align*}
+      i &= \sqrt{-1} && \text{Imaginary unit} \\
+      z &= a + bi && \text{Complex number z} \\
+      \bar{z} &= a - bi && \text{Complex congugate} \\
+      a &= Re(a + bi) &&  \text{Real part} \\
+      b &= Im(a + bi) && \text{Imaginary part} \\
+      (a+bi)+(c+di) &= (a+c) + (b+d)i && \text{Addition} \\
+      (a+bi)\cdot(c+di) &= (ac-bd) + (ad+bc)i && \text{Multiplication} \\
+      \frac{a+bi}{c+di} &= \frac{(ac+bd) + (bc-ad)i}{c^2+d^2} && \text{Division} \\
+      \abs{z} &= \sqrt{a^2+b^2} && \text{Absolute value, Modulus} \\
+      arg(z) &= tan^{-1}(b/a) = \theta && \text{Argument} \\
+      z\bar{z} &= \abs{z}^2 && \text{Modulus squared} \\
+      e^{i\theta} &= cos(\theta) + i\,sin(\theta) && \text{Euler's Formula} \\
+      z &= \abs{z}[cos(\theta) + i\,sin(\theta)] && \text{Polar form I} \\
+      z &= \abs{z}e^{i\theta} && \text{Polar form II} \\
     \end{align*}
   \end{section}
 
