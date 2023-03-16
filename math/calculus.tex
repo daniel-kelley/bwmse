@@ -246,7 +246,7 @@
      $M$ & Field component in $x$ direction ($\hat{i}$) & $F_x$ \\
      $N$ & Field component in $y$ direction ($\hat{j}$) & $F_y$ \\
      $C$ & Curve $\vec{r}(t)$ = $ \langle x(t),y(t) \rangle $ & \\
-   \end{tabular}
+    \end{tabular}
     \begin{align*}
       \vec{F}(x,y) &= \langle M,N \rangle \\
       \vec{F}(x,y) &= M(x,y)\hat{i} + N(x,y)\hat{j}\\
@@ -263,6 +263,78 @@
       r &= \sqrt{x^2+y^2} \\
       dx\,dy &= r\,dr\,d\theta\\
     \end{align*}
+  \end{section}
+
+  \begin{section}{Complex Arithmetic}
+    \begin{align*}
+      i &= \sqrt{-1} && \text{Imaginary unit} \\
+      z &= a + bi && \text{Complex number z} \\
+      \bar{z} &= a - bi && \text{Complex congugate} \\
+      a &= Re(a + bi) &&  \text{Real part} \\
+      b &= Im(a + bi) && \text{Imaginary part} \\
+      (a+bi)+(c+di) &= (a+c) + (b+d)i && \text{Addition} \\
+      (a+bi)\cdot(c+di) &= (ac-bd) + (ad+bc)i && \text{Multiplication} \\
+      \frac{a+bi}{c+di} &= \frac{(ac+bd) + (bc-ad)i}{c^2+d^2} && \text{Division} \\
+      \abs{z} &= \sqrt{a^2+b^2} && \text{Absolute value, Modulus} \\
+      arg(z) &= tan^{-1}(b/a) = \theta && \text{Argument} \\
+      z\bar{z} &= \abs{z}^2 && \text{Modulus squared} \\
+      e^{i\theta} &= cos(\theta) + i\,sin(\theta) && \text{Euler's Formula} \\
+      z &= \abs{z}[cos(\theta) + i\,sin(\theta)] && \text{Polar form I} \\
+      z &= \abs{z}e^{i\theta} && \text{Polar form II} \\
+    \end{align*}
+  \end{section}
+
+  \begin{section}{Sinusoidal Functions}
+    \begin{tabular}{l l}
+      $A$ & Amplitude \\
+      $\omega$ & Angular Frequency\\
+      $\phi$ &Phase lag \\
+      $\tau$ & Time delay \\
+      $\nu$ & Frequency \\
+      $P$ & Period \\
+    \end{tabular}
+    \begin{align*}
+      f(t) &= A\,cos(\omega\,t - \phi) \\
+      f(t) &= A\,cos(\omega\,(t - \tau)) \\
+      \tau &= \phi / \omega \\
+      \nu &= \omega / 2\pi \\
+      P &= 1/\nu \\
+    \end{align*}
+  \end{section}
+
+  \begin{section}{Sinusoidal Identity}
+    \begin{align*}
+      a\,cos(\omega\,t)+b\,sin(\omega\,t) &= A\,cos(\omega\,t - \phi)
+    \end{align*}
+
+    \begin{tabular}{l l}
+      $a\,cos(\omega\,t)+b\,sin(\omega\,t)$ & Rectangular (Cartesian) form \\
+      $A\,cos(\omega\,t - \phi)$ & Amplitude-phase form \\
+    \end{tabular}
+
+    \begin{align*}
+      A &= \sqrt{a^2+b^2} \\
+      \phi &= tan^{-1}(b/a) \\
+      a+bi &= Ae^{i\phi} \\
+      a &= A\,cos(\phi) \\
+      b &= A\,sin(\phi)
+    \end{align*}
+    \begin{figure}[h!]
+      \begin{center}
+        \begin{tikzpicture}[scale=0.5]
+          \draw (0,0) to (3.9,0);
+          \draw (0,0) to (3.9,2.25);
+          \draw (3.9,2.25) to (3.9,0);
+          \draw [thick, ->] (1,0) arc
+          [start angle=0, end angle=60, radius=0.5];
+          \draw [fill] (1.5,1.8) node [black,right] {$A$};
+          \draw [fill] (1.5,-0.5) node [black,right] {$a$};
+          \draw [fill] (4.0,1.0) node [black,right] {$b$};
+          \draw [fill] (1.1,0.4) node [black,right] {$\phi$};
+        \end{tikzpicture}
+        \caption{$a+bi=Ae^{i\phi}$}
+      \end{center}
+    \end{figure}
   \end{section}
 
   \begin{section}{Line Integral}
