@@ -1,0 +1,24 @@
+% -*-latex-*-
+% de.tex
+%
+% Differential Equations
+%
+
+\begin{section}{Differential Equations}
+  \begin{subsection}{Separation of Variables}
+    \begin{align*}
+      \frac{dy}{dx} &= f(x)g(y) \\
+      \frac{dy}{g(y)} &= f(x)\,dx \\
+      \int{\frac{dy}{g(y)}} &= \int{f(x)}\,dx+c \\
+    \end{align*}
+  \end{subsection}
+  \begin{subsection}{Integrating Factors}
+    \begin{align*}
+      \frac{dy}{dx} + P(x)y &= Q(x) \\
+      \frac{d}{dx}(e^{\int\,P(x)\,dx}\,y) &= Q(x)\,e^{\int\,P(x)\,dx} \\
+      \int{\frac{d}{dx}(e^{\int\,P(x)\,dx}\,y)} &= \int{Q(x)\,e^{\int\,P(x)\,dx}} \\
+      e^{\int\,P(x)\,dx}\,y &= \int{Q(x)\,e^{\int\,P(x)\,dx}} \\
+      y &= e^{-\int\,P(x)\,dx}\,\int{Q(x)\,e^{\int\,P(x)\,dx}} \\
+    \end{align*}
+  \end{subsection}
+\end{section}
