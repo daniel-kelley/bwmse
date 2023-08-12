@@ -1,0 +1,23 @@
+% -*-latex-*-
+% fourier.tex
+%
+% Fourier Series
+%
+
+\begin{section}{Fourier Series}
+  \begin{subsection}{Fourier Coefficients}
+    \begin{align*}
+      L &= \text{half period}\\
+      t &= \text{dependent variable, generally time} \\
+      f(t) &= \text{given function}\\
+      f(t) &= \frac{a_{0}}{2} + \sum_{n=1}^{\infty} a_ncos(nt) + b_nsin(nt)\\
+      a_0 &= \frac{1}{L} \int_{-L}^{L} f(t)\,dt\\
+      a_n &= \frac{1}{L} \int_{-L}^{L} f(t)\,cos(n\frac{\pi}{L}t)\,dt \\
+      b_n &= \frac{1}{L} \int_{-L}^{L} f(t)\,sin(n\frac{\pi}{L}t)\,dt \\
+      a_n &= \frac{2}{L} \int_{0}^{L} f(t)\,cos(n\frac{\pi}{L}t)\,dt
+          && b_0=0, f(t)=f(-t),\,\text{even function.} \\
+      b_n &= \frac{2}{L} \int_{0}^{L} f(t)\,sin(n\frac{\pi}{L}t)\,dt
+          && a_0=0, f(-t)=-f(t),\,\text{odd function.} \\
+    \end{align*}
+  \end{subsection}
+\end{section}
