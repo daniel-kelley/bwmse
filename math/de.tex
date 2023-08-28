@@ -21,4 +21,19 @@
       y &= e^{-\int\,P(x)\,dx}\,\int{Q(x)\,e^{\int\,P(x)\,dx}} \\
     \end{align*}
   \end{subsection}
+  \begin{subsection}{Step and Delta Functions}
+    \begin{align*}
+      u(t) &= (t<0) \,?\, 0 : 1 && \text{Unit step function}\\
+      u(t-a) &= (t<a) \,?\, 0 : 1 && \text{Unit step function at $a$}\\
+      u(0) &= \frac{1}{2} && \text{Heaviside step function}\\
+      u_{ab}(t) &= u(t-a) - u(t-b) && \text{Box function $a<t<b$}\\
+      \delta(t) &= (t=0)\,?\,\infty : 0 && \text{Dirac delta function}\\
+      f(t)\delta(t) &= f(0)\delta(t) \\
+      f(t)\delta(t-a) &= f(a)\delta(t) \\
+      \frac{d}{dt}u(t) &= \delta(t)\\
+      \int_c^d \delta(t)\,dt &= (c<0<d)\,?\,1:0 \\
+      \int_c^d f(t)\delta(t)\,dt &= (c<0<d)\,?\,f(0):0 \\
+      \int_c^d f(t)\delta(t-a)\,dt &= (c<0<d)\,?\,f(a):0 \\
+    \end{align*}
+  \end{subsection}
 \end{section}
