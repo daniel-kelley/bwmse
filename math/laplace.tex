@@ -1,0 +1,61 @@
+% -*-latex-*-
+% laplace.tex
+%
+% dkelley -  26 Sep 2023
+%
+%
+
+\begin{section}{Laplace Transform}
+  \begin{subsection}{Definitions}
+    \begin{align*}
+      F(s) &= \int_{0^-}^{\infty}f(t)e^{-st}\,dt  && \text{Definition}\\
+      a\,f(t) + b\,g(t) &= a\,F(s) + b\,G(s)  && \text{Linearity}\\
+      a^{zt}f(t)&= F(s-z) && \text{s-shift} \\
+      u(t-a)f(t-a)&= e^{-as}F(s) && \text{t-translation I} \\
+      u(t-a)f(t)&= e^{-as}\mathcal{L}(f(t+a)) && \text{t-translation II} \\
+      f'(t) &= sF(s) - f(0^{-}) \\
+      f''(t) &= s^{2}F(s) - sf(0^{-}) - f'(0^{-}) \\
+      f^{(n)}(t) &= s^{n}F(s) - s^{n-1}f(0^{-}) - ... - f^{n-1}(0^{-}) \\
+      tf(t) &= -F'(s) \\
+      t^{n}f(t) &= (-1)^{n}F^{n}(s) \\
+      (f*g)(t)&= F(s)G(s) \\
+      \int_{0^-}^{t^+} f(\tau)\,d\tau &= \frac{F(s)}{s} \\
+    \end{align*}
+  \end{subsection}
+  \begin{subsection}{Transforms}
+    \begin{align*}
+      1 &= \frac{1}{s} && Re(s) > 0\\
+      e^{at} &= \frac{1}{s-a} && Re(s) > a\\
+      t &= \frac{1}{s^2} && Re(s) > 0\\
+      t^n &= \frac{n!}{s^{n+1}} && Re(s) > 0\\
+      cos(\omega\,t) &= \frac{s}{s^2+\omega^2} && Re(s) > 0\\
+      sin(\omega\,t) &= \frac{\omega}{s^2+\omega^2} && Re(s) > 0\\
+      e^{zt}cos(\omega\,t) &= \frac{(s-z)}{(s-z)^2+\omega^2} && Re(s) > Re(z)\\
+      e^{zt}sin(\omega\,t) &= \frac{\omega}{(s-z)^2+\omega^2} && Re(s) > Re(z)\\
+      \delta(t) &= 1 && \forall\,s\\
+      \delta(t-a) &= e^{-as} && \forall\,s\\
+      u(t-a)&= e^{-as}/s && Re(s) > 0\\
+      cosh(kt) &= \frac{s}{s^2-k^2} && Re(s) > k\\
+      sinh(kt) &= \frac{k}{s^2-k^2} && Re(s) > k\\
+      \frac{sin(\omega\,t)-\omega\,t\,cos(\omega\,t)}{2\omega^3}
+           &= \frac{1}{(s^2+\omega^2)^2} && Re(s) > 0\\
+      \frac{t\,sin(\omega\,t)}{2\omega}
+           &= \frac{s}{(s^2+\omega^2)^2} && Re(s) > 0\\
+      \frac{sin(\omega\,t)+\omega\,t\,cos(\omega\,t)}{2\omega}
+           &= \frac{s^2}{(s^2+\omega^2)^2} && Re(s) > 0\\
+      t^n\,e^{at} &= \frac{n!}{(s-a)^{n+1}} && Re(s) > a\\
+      \frac{1}{\sqrt{\pi\,t}} &= \frac{1}{\sqrt{s}} && Re(s) > 0\\
+      t^a &= \frac{\Gamma(a+1)}{s^{a+1}} && Re(s) > 0\\
+    \end{align*}
+  \end{subsection}
+  \begin{subsection}{Heaviside Coverup}
+    Decomposition of Laplace transforms into partial
+    fractions. Denominator must be distinct linear factors.
+    \begin{align*}
+      G(s) &= \Pi_{n=1}^{k} H_n(s)\\
+      F(s)/G(s) &= \Sigma \frac{A_n}{H_{n}(s)}\\
+      D_{n}(s) &=\frac{G(s)}{H_n(s)}\\
+      A_n &= \frac{F(s)}{D_{n}(s)} \biggr\rvert_{solve(s,H_{n}(s)=0)}\\
+    \end{align*}
+  \end{subsection}
+\end{section}
