@@ -8,14 +8,15 @@
 \begin{section}{Laplace Transform}
   \begin{subsection}{Definitions}
     \begin{align*}
-      F(s) &= \int_{0^-}^{\infty}f(t)e^{-st}\,dt  && \text{Definition}\\
+      F(s) &= \int_{0^-}^{\infty}f(t)e^{-st}\,dt = \mathcal{L}(f(t))
+           && \text{Definition}\\
       a\,f(t) + b\,g(t) &= a\,F(s) + b\,G(s)  && \text{Linearity}\\
-      a^{zt}f(t)&= F(s-z) && \text{s-shift} \\
+      e^{zt}f(t)&= F(s-z) && \text{s-shift} \\
       u(t-a)f(t-a)&= e^{-as}F(s) && \text{t-translation I} \\
       u(t-a)f(t)&= e^{-as}\mathcal{L}(f(t+a)) && \text{t-translation II} \\
       f'(t) &= sF(s) - f(0^{-}) \\
       f''(t) &= s^{2}F(s) - sf(0^{-}) - f'(0^{-}) \\
-      f^{(n)}(t) &= s^{n}F(s) - s^{n-1}f(0^{-}) - ... - f^{n-1}(0^{-}) \\
+      f^{(n)}(t) &= s^{n}F(s) - \sum_{k=0}^{n-1}\,s^{n-k-1}\,f^{(k)}(0^{-}) \\
       tf(t) &= -F'(s) \\
       t^{n}f(t) &= (-1)^{n}F^{n}(s) \\
       (f*g)(t)&= F(s)G(s) \\
@@ -52,7 +53,7 @@
     Decomposition of Laplace transforms into partial
     fractions. Denominator must be distinct linear factors.
     \begin{align*}
-      G(s) &= \Pi_{n=1}^{k} H_n(s)\\
+      G(s) &= \prod\limits_{n=1}^{k} H_n(s)\\
       F(s)/G(s) &= \Sigma \frac{A_n}{H_{n}(s)}\\
       D_{n}(s) &=\frac{G(s)}{H_n(s)}\\
       A_n &= \frac{F(s)}{D_{n}(s)} \biggr\rvert_{solve(s,H_{n}(s)=0)}\\
