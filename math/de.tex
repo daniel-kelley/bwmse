@@ -36,4 +36,45 @@
       \int_c^d f(t)\delta(t-a)\,dt &= (c<a<d)\,?\,f(a):0 \\
     \end{align*}
   \end{subsection}
+  \begin{subsection}{Linearization}
+    \begin{align*}
+      \dot{x} &= ax + by && \text{System 1}\\
+      \dot{y} &= cx + dy && \text{System 2}\\
+      \begin{pmatrix}
+        \dot{x} \\
+        \dot{y} \\
+      \end{pmatrix}
+      &=
+      \begin{pmatrix}
+        a & b \\
+        c & d \\
+      \end{pmatrix}
+      \begin{pmatrix}
+        x \\
+        y \\
+      \end{pmatrix}
+      && \text{System in matrix form}\\
+      A &=
+      \begin{pmatrix}
+        a & b \\
+        c & d \\
+      \end{pmatrix}
+      && \text{System coefficients}\\
+      \lambda &= \lambda_1 , \lambda_2 && \text{Eigenvalues}\\
+      A\,\mathbf{v} &= \lambda\,\mathbf{v} &&  \text{Eigenvectors}\\
+      \mathbf{a} &=
+      \begin{pmatrix}
+        h \\
+        k \\
+      \end{pmatrix}
+      && \text{Solution coefficients}\\
+     \dot{\mathbf{x}} &= A\,\mathbf{x} && \text{System in compact form} \\
+     \mathbf{x} &= e^{\lambda\,t}\,\mathbf{a}
+     && \text{Solution in compact form} \\
+     \lambda^2 - (a+d)\lambda + (ad - bc) &= 0
+     && \text{Characteristic Equation (CE)} \\
+     \lambda^2 - tr(A)\lambda + det(A) &= 0
+     && \text{CE with trace and determinant} \\
+    \end{align*}
+  \end{subsection}
 \end{section}
