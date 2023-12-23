@@ -5,6 +5,17 @@
 %
 
 \begin{section}{Differential Equations}
+  % existance:
+  %  if y'=f(x,y) is defined
+  % uniqueness
+  %  there is exctly one solution y(a)=b
+  % intersection
+  %  integral curves do not intersect
+  % superposition
+  % homogeneous
+  % inhomogeneous
+  % autonomous
+
   \begin{subsection}{Separation of Variables}
     \begin{align*}
       \frac{dy}{dx} &= f(x)g(y) \\
@@ -20,6 +31,54 @@
       e^{\int\,P(x)\,dx}\,y &= \int{Q(x)\,e^{\int\,P(x)\,dx}} \\
       y &= e^{-\int\,P(x)\,dx}\,\int{Q(x)\,e^{\int\,P(x)\,dx}} \\
     \end{align*}
+  \end{subsection}
+  \begin{subsection}{Differential Operators}
+    \begin{align*}
+      a_n &= \text{Constant coefficients} \\
+      \sum_{n=0}^{N} a_n\,y^{(n)} &= f(t) && \text{Linear $N^{th}$ order ODE} \\
+      \sum_{n=0}^{N} a_n\,D^{n} &= p(D) && \text{Differential Operator $D$} \\
+      p(D)\,y &= f(t) && \text{Operator form in $D$} \\
+      (p(D) + q(D))y &= p(D)y + q(D)y && \text{Summation} \\
+      p(D)(c_1\,f + c_2\,g) &=
+      c_1\,p(D)\,f +  c_2\,p(D)\,g && \text{Linearity} \\
+      (p(D)\,q(D))y &= p(D)\,q(D)y && \text{Multiplication} \\
+      p(D)\,q(D)y &= q(D)\,p(D)y && \text{Multiplication commutes} \\
+      p(D)e^{at} &= p(a)\,e^{at} && \text{Substitution} \\
+      p(D)e^{at}\,y &= e^{at}p(D+a)\,y && \text{Exponential Shift} \\
+      p(D)\,y(t-c) &= f(t-c) && \text{Time Invariance} \\
+    \end{align*}
+  \end{subsection}
+  \begin{subsection}{Exponential Response}
+     Particular Solutions
+     \begin{align*}
+       p(D)\,y &= e^{at} && \text{Exponential Response in operator form} \\
+       y &= e^{at}/p(a) && \text{if $p(a) \ne 0$} \\
+       y &= t\,e^{at}/\dot{p}(a) &&
+           \text{if $p(a)=0 \land \dot{p}(a) \ne 0$} \\
+       y &= t^{2}\,e^{at}/\ddot{p}(a) &&
+           \text{if $p(a)=0 \land \dot{p}(a)=0 \land \ddot{p}(a) \ne 0$} \\
+       y &= t^{s}\,e^{at}/p^{(s)}(a) &&
+           \text{if $p^{(s-1)..0}(a)=0 \land p^{(s)}(a) \ne 0$} \\
+     \end{align*}
+  \end{subsection}
+  \begin{subsection}{Generalized Characteristic Equation}
+  \begin{align*}
+    N &= \text{Order of equation}\\
+    n &= \text{Index of order}\\
+    M &= \text{Number of distinct roots}\\
+    m &= \text{Index of first distinct root in $n$ space}\\
+    a_n &= n^{th} \text{ODE constant coefficient}\\
+    K &= \text{Number of repeated roots}\\
+    k &= \text{Index of repeated root}\\
+    r_n &= \text{$n^{th}$ (sorted) root}\\
+    c_n &= \text{$n^{th}$ solution constant}\\
+    \text{ODE} &= \sum_{n=0}^{N} a_n\,y^{(n)} && \text{Linear $N^{th}$ order ODE} \\
+    \text{CP} &=\sum_{n=0}^{N} a_nr^n && \text{Characteristic Polynomial}\\
+    r_{n} &= solve(\text{CP} = 0, r) && \text{Roots of CP}\\
+    \text{CE} &=
+       \sum_{m=0}^{M} e^{r_{m}\,x} \left( \sum_{0}^{K-1} c_{m+k} x^{k-1} \right) &&
+       \text{Characteristic Equation}\\
+  \end{align*}
   \end{subsection}
   \begin{subsection}{Step and Delta Functions}
     \begin{align*}
