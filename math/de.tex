@@ -11,10 +11,38 @@
   %  there is exctly one solution y(a)=b
   % intersection
   %  integral curves do not intersect
-  % superposition
-  % homogeneous
-  % inhomogeneous
   % autonomous
+  \begin{subsection}{Forms}
+  \begin{tabular}{l l l l}
+    ODE & Homogeneous & Particular & Description\\
+    & Solution & Solution & \\
+    \hline \\
+    $A(t)\dot{x}+B(t)x=0$ & $x_h$ & & Homogeneous ODE\\
+    $A(t)\dot{x}+B(t)x=q(t)$ & & $x_p$ & Inhomogeneous ODE $q(t) \ne 0$\\
+    $\dot{x}=ax$ & $x(t)=Ce^{at}$ & & Exponential Growth (Autonomous ODE)\\
+    $\dot{x}=f(x) \cdot ax$ & $$ & & Logistic Population Model\\
+    $\dot{x}+k\,x=q(t)$ & $C\,e^{-kt}$ & $e^{-kt}\int e^{kt} q(t) dt$ &
+      Constant Coefficient First Order ODE\\
+    $\dot{x}+k\,x=B\,e^{at}$ & $C\,e^{-kt}$ & $\frac{B\,e^{at}}{k+a}$ &
+      Exponential Response\\
+    $m\,\ddot{x}+k\,x=0$ & $$ & $$ & Simple Harmonic Oscillator\\
+    $m\,\ddot{x}+b\ddot{x}+k\,x=0$ & $$ & $$ & Damped Harmonic Oscillator\\
+%    $$ & $$ & $$ & \\
+  \end{tabular}
+  \end{subsection}
+
+  \begin{subsection}{Superposition}
+    If $x_1$ is a solution to $DE=q_1(t)$ and $x_2$ is
+    a solution to $DE=q_2(t)$ then for any constants $a$
+    and $b$, $a\,x_1 + b\,x_2$ is a solution to
+    $DE=a\,q_1(t) + b\,q_2(t)$.
+  \end{subsection}
+
+  \begin{subsection}{General Solution}
+    The general solution for a first order ODE is $x_p(t) + c\,x_h(t)$
+    for any constant $c$. For an ODE of any order, the number of
+    constants is equal to the order.
+  \end{subsection}
 
   \begin{subsection}{Separation of Variables}
     \begin{align*}
@@ -95,6 +123,41 @@
       \int_c^d f(t)\delta(t-a)\,dt &= (c<a<d)\,?\,f(a):0 \\
     \end{align*}
   \end{subsection}
+
+  \begin{subsection}{Impulse Response}
+    The solution of an impulse response is a homogeneous solution with
+    {\em almost} rest initial conditions as shown below.
+    \begin{align*}
+       p(D)\,y &= e^{at} && \text{Exponential Response in operator form} \\
+       y &= e^{at}/p(a) && \text{if $p(a) \ne 0$} \\
+      \sum_{n=0}^{N} a_n\,x^{(n)} &= \delta(t) && && \text{$N^{th}$ order ODE} \\
+      x^{(n)}(0) &= 0 && n \ne N-1 && \text{Almost all at rest} \\
+      x^{(n-1)}(0) &= 1/a_n && n = N-1 && \text{Except for next-to-last} \\
+    \end{align*}
+  \end{subsection}
+
+  \begin{subsection}{Convolution}
+    \begin{align*}
+      f(x) \ast g(x) &= \int_{0-}^{t+} f(\tau)\,g(t-\tau)\,d\tau &&
+      \text{Single Sided}\\
+      (c_1f_1 + c_2f_2) \ast g &= c_1(f_1 \ast g) + c_2(f_2 \ast g) &&
+      \text{Distributive}\\
+      f \ast g &= g \ast f && \text{Communitive} \\
+      f \ast (g \ast h) &= (f \ast g) \ast h && \text{Associative} \\
+      \delta(t) \ast f(t) &= f(t) && \text{Multplicitive identity} \\
+      \delta(t-a) \ast f(t) &= f(t-a) && \text{Shift} \\
+    \end{align*}
+  \end{subsection}
+
+  \begin{subsection}{Green's Formula}
+    The solution for an arbitrary response is the convolution of the response
+    $f(t)$ with the impulse response $w(t)$.
+    \begin{align*}
+      p(D)\,y &= f(t) && \text{Arbitrary Response in operator form} \\
+      y &= (f \ast w)(t) && \text{Solution using convolution} \\
+    \end{align*}
+  \end{subsection}
+
   \begin{subsection}{Linearization}
     \begin{align*}
       \dot{x} &= ax + by && \text{System 1}\\
