@@ -49,14 +49,28 @@
       t^a &= \frac{\Gamma(a+1)}{s^{a+1}} && Re(s) > 0\\
     \end{align*}
   \end{subsection}
+
   \begin{subsection}{Heaviside Coverup}
     Decomposition of Laplace transforms into partial
-    fractions. Denominator must be distinct linear factors.
+    fractions $A_n/H_n(s)$.
+
+    Denominator must be distinct linear factors.
     \begin{align*}
-      G(s) &= \prod\limits_{n=1}^{k} H_n(s)\\
-      F(s)/G(s) &= \Sigma \frac{A_n}{H_{n}(s)}\\
-      D_{n}(s) &=\frac{G(s)}{H_n(s)}\\
-      A_n &= \frac{F(s)}{D_{n}(s)} \biggr\rvert_{solve(s,H_{n}(s)=0)}\\
+      F(s) &= \text{Numerator in $s$}\\
+      G(s) &= \text{Denominator in $s$}\\
+      A_n &= \text{Numerator of partial fraction term}\\
+      H_n(s) &=
+      \text{Distinct Linear Factor, Denominator of partial fraction term} \\
+      D_n(s) &= \text{Denominator of $A_n$ solution term} \\
+      S_n &= \text{Solution for $H_n(s)=0$} \\
+      G(s) &= \prod\limits_{n=1}^{k} H_n(s) &&
+              \text{Product of distinct linear factors} \\
+      F(s)/G(s) &= \Sigma \frac{A_n}{H_{n}(s)} &&
+              \text{Partial Fraction Decomposition} \\
+      D_n(s) &= \frac{G(s)}{H_n(s)} && \text{$A_n$ solution term} \\
+      S_n &= solve(H_n(s)=0,s) && \text{$A_n$ solution term} \\
+      A_n &= \frac{F(S_n)}{D_n(S_n)} \\
     \end{align*}
   \end{subsection}
+
 \end{section}
